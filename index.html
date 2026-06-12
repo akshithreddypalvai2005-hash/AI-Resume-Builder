@@ -1,27 +1,168 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>AI Resume Builder</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Resume Builder</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f5f5f5;
+    margin:20px;
+}
+
+.form{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    margin-bottom:20px;
+}
+
+input, textarea{
+    width:100%;
+    padding:10px;
+    margin:5px 0 15px;
+}
+
+button{
+    padding:10px 20px;
+    cursor:pointer;
+}
+
+.resume{
+    width:800px;
+    margin:auto;
+    display:flex;
+    background:white;
+    min-height:900px;
+}
+
+.left{
+    width:30%;
+    background:#1f2937;
+    color:white;
+    padding:20px;
+}
+
+.right{
+    width:70%;
+    padding:20px;
+}
+
+.profile{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    object-fit:cover;
+    display:block;
+    margin:auto;
+}
+
+h2,h3{
+    margin-bottom:5px;
+}
+
+.section{
+    margin-top:20px;
+}
+</style>
 </head>
+
 <body>
 
-<h1>AI Resume Builder</h1>
+<div class="form">
+    <h1>Resume Builder</h1>
 
-<input type="text" id="name" placeholder="Name"><br><br>
-<input type="email" id="email" placeholder="Email"><br><br>
+    <input type="text" id="name" placeholder="Full Name">
 
-<textarea id="education" placeholder="Education"></textarea><br><br>
+    <input type="text" id="job" placeholder="Job Title">
 
-<textarea id="skills" placeholder="Skills"></textarea><br><br>
+    <input type="email" id="email" placeholder="Email">
 
-<textarea id="experience" placeholder="Experience"></textarea><br><br>
+    <input type="text" id="phone" placeholder="Phone">
 
-<button onclick="generateResume()">Build Resume</button>
+    <textarea id="profile" placeholder="Profile Summary"></textarea>
 
-<div id="resume"></div>
+    <textarea id="skills" placeholder="Skills"></textarea>
 
-<script src="script.js"></script>
+    <textarea id="education" placeholder="Education"></textarea>
+
+    <textarea id="experience" placeholder="Experience"></textarea>
+
+    <button onclick="generateResume()">Generate Resume</button>
+</div>
+
+<div class="resume">
+
+<div class="left">
+    <img src="https://via.placeholder.com/120" class="profile">
+
+    <div class="section">
+        <h3>Contact</h3>
+        <p id="rEmail"></p>
+        <p id="rPhone"></p>
+    </div>
+
+    <div class="section">
+        <h3>Skills</h3>
+        <p id="rSkills"></p>
+    </div>
+</div>
+
+<div class="right">
+
+    <h2 id="rName">Your Name</h2>
+    <h4 id="rJob">Job Title</h4>
+
+    <div class="section">
+        <h3>Profile</h3>
+        <p id="rProfile"></p>
+    </div>
+
+    <div class="section">
+        <h3>Education</h3>
+        <p id="rEducation"></p>
+    </div>
+
+    <div class="section">
+        <h3>Experience</h3>
+        <p id="rExperience"></p>
+    </div>
+
+</div>
+
+</div>
+
+<script>
+function generateResume(){
+
+document.getElementById("rName").innerText =
+document.getElementById("name").value;
+
+document.getElementById("rJob").innerText =
+document.getElementById("job").value;
+
+document.getElementById("rEmail").innerText =
+document.getElementById("email").value;
+
+document.getElementById("rPhone").innerText =
+document.getElementById("phone").value;
+
+document.getElementById("rProfile").innerText =
+document.getElementById("profile").value;
+
+document.getElementById("rSkills").innerText =
+document.getElementById("skills").value;
+
+document.getElementById("rEducation").innerText =
+document.getElementById("education").value;
+
+document.getElementById("rExperience").innerText =
+document.getElementById("experience").value;
+
+}
+</script>
 
 </body>
 </html>
