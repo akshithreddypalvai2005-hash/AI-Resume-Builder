@@ -25,6 +25,7 @@ box-shadow:0 15px 40px rgba(0,0,0,.2);
 text-align:center;
 margin-bottom:25px;
 color:#111827;
+font-size:32px;
 }
 
 input,textarea{
@@ -128,7 +129,14 @@ line-height:1.8;
 font-size:15px;
 }
 
+#rEmail,
+#rPhone,
+#rSkills{
+word-break:break-word;
+}
+
 @media(max-width:768px){
+
 .resume{
 flex-direction:column;
 }
@@ -140,6 +148,51 @@ width:100%;
 
 #rName{
 font-size:30px;
+}
+}
+
+@media print{
+
+.form-container{
+display:none !important;
+}
+
+body{
+background:white !important;
+padding:0 !important;
+}
+
+.resume{
+margin:0 !important;
+max-width:100% !important;
+width:100% !important;
+box-shadow:none !important;
+border-radius:0 !important;
+}
+
+.left{
+width:32%;
+}
+
+.right{
+width:68%;
+}
+
+#rName{
+font-size:30px;
+}
+
+#rJob{
+font-size:18px;
+}
+
+p{
+font-size:12px;
+line-height:1.4;
+}
+
+.section{
+margin-top:15px;
 }
 }
 </style>
