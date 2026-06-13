@@ -9,7 +9,7 @@ font-family:'Segoe UI',sans-serif;
 body{
 background:linear-gradient(135deg,#667eea,#764ba2);
 padding:30px;
-min-height:100vh;
+min-height:100vh; 
 }
 
 .form-container{
